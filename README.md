@@ -1,1 +1,1 @@
-# string-searching
+# shortest superstring

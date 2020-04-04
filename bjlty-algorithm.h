@@ -9,11 +9,11 @@
 
 std::string AlgorithmBJLTY();
 
-size_t overlap(std::string s1, std::string s2);
+size_t Overlap(std::string s1, std::string s2);
 
-size_t * assignment(size_t ** matrix, size_t size);
+size_t * Assignment(size_t ** matrix, size_t size);
 
-std::string prefix(std::string s1, size_t ov);
+std::string Prefix(std::string s1, size_t ov);
 
 std::string StringBuilder(std::list<std::string> & superstrings);
 

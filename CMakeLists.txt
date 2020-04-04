@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(string-searching)
+project(shortest_superstring)
 
 include_directories(./)
+include_directories(./include)
+include_directories(./source)
 
 add_library(bjlty-algorithm STATIC bjlty-algorithm.h bjlty-algorithm.cpp)
 

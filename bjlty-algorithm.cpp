@@ -14,11 +14,11 @@ std::string AlgorithmBJLTY() {
 
     for (size_t i = 0; i < number_of_strings; i++) {
         for (size_t j = 0; j < number_of_strings; j++) {
-            overlaps.AddEdge(i, j, overlap(strings[i], strings[j]));
+            overlaps.AddEdge(i, j, Overlap(strings[i], strings[j]));
         }
     }
 
-    size_t *assign = assignment(overlaps.GetMatrix(), overlaps.GetSize());
+    size_t *assign = Assignment(overlaps.GetMatrix(), overlaps.GetSize());
 
     std::list<std::list<size_t>> cycles;
     std::list<std::size_t> cycle;
@@ -73,7 +73,7 @@ std::string AlgorithmBJLTY() {
         it2++;
 
         for (; it2 != (*it).end(); it1++, it2++) {
-            str += prefix(strings[*it1], overlaps.GetEdgesFrom(*it1)[*it2]);
+            str += Prefix(strings[*it1], overlaps.GetEdgesFrom(*it1)[*it2]);
         }
         str += strings[*it1];
         superstrings.push_back(str);
@@ -84,22 +84,22 @@ std::string AlgorithmBJLTY() {
     return StringBuilder(superstrings);
 }
 
-size_t overlap(std::string s1, std::string s2) {
+size_t Overlap(std::string s1, std::string s2) {
     size_t s1_last = s1.length() - 1;
     size_t s2_len = s2.length();
-    size_t overlap = 0;
+    size_t Overlap = 0;
 
     for (size_t i = s1_last, j = 1; i > 0 && j < s2_len; i--, j++) {
         std::string suff = s1.substr(i);
         std::string pref = s2.substr(0, j);
         if (suff == pref) {
-            overlap = j;
+            Overlap = j;
         }
     }
-    return overlap;
+    return Overlap;
 }
 
-size_t * assignment(size_t **matrix, size_t size) {
+size_t * Assignment(size_t **matrix, size_t size) {
     bool **not_allow = new bool*[size];
     size_t *assign = new size_t[size];
 
@@ -147,7 +147,7 @@ size_t * assignment(size_t **matrix, size_t size) {
 }
 
 
-std::string prefix(std::string s1, size_t ov) {
+std::string Prefix(std::string s1, size_t ov) {
     return s1.substr(0, s1.length() - ov);
 }
 
