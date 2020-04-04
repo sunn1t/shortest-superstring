@@ -45,5 +45,5 @@ Graph::~Graph() {
     }
 
     delete [] adj_matrix;
-    }
+}
 
