@@ -1,6 +1,7 @@
 language: c++
 os: linux
 
+
 script:
         - mkdir build
         - cd build
