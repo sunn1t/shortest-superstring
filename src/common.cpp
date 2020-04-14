@@ -2,18 +2,14 @@
 #include <iostream>
 
 size_t overlap(std::string s1, std::string s2) {
-    size_t s1_last = s1.length() - 1;
+    size_t s1_len = s1.length();
     size_t s2_len = s2.length();
     size_t overlap = 0;
 
-//    std::cout << "Analasyed: " << s1 << ", " << s2 << std::endl;
-
-    for (size_t i = s1_last, j = 1; i > 0 && j < s2_len; i--, j++) {
-        std::string suff = s1.substr(i);
-        std::string pref = s2.substr(0, j);
-        if (suff == pref) {
-            overlap = j;
-        }
+    for (size_t i = s1_len - 1, j = 1; i > 0 && j < s2_len; i--, j++) {
+        size_t k, l;
+        for(k = i, l = 0; k < s1_len && l < j && s1[k] == s2[l]; k++, l++);
+        overlap = j == l ? j : overlap;
     }
     return overlap;
 }
