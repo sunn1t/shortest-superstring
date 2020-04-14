@@ -1,17 +1,15 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.5)
 
-project(shortest_superstring)
+project(ShortestSuperstring)
+
+set (CMAKE_CXX_STANDARD 17)
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -std=c++17 -march=native")
 
 include_directories(./)
-include_directories(./include)
-include_directories(./source)
 
-add_library(bjlty-algorithm STATIC bjlty-algorithm.h bjlty-algorithm.cpp)
+add_library(lib STATIC algorithms.h algorithms.cpp graph.h graph.cpp common.h common.cpp tcp.h tcp.cpp)
 
-add_library(graph STATIC graph.h graph.cpp)
+add_executable(exec tests.cpp main.cpp)
 
-add_executable(exec main.cpp)
+target_link_libraries(exec lib gtest gtest_main pthread)
 
-target_link_libraries(exec bjlty-algorithm)
-
-target_link_libraries(exec graph)
