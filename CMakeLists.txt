@@ -13,3 +13,5 @@ add_executable(exec tests.cpp main.cpp)
 
 target_link_libraries(exec lib gtest gtest_main pthread)
 
+add_subdirectory(lib/googletest)
+
