@@ -8,6 +8,7 @@
 #include <iostream>
 #include <iterator>
 #include <algorithm>
+#include <cstddef>
 
 std::string AlgorithmBJLTY(size_t number_of_strings, std::string *strings);
 

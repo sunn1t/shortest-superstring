@@ -4,6 +4,7 @@
 #include <string>
 #include <graph.h>
 #include <list>
+#include <cstddef>
 
 size_t overlap(std::string s1, std::string s2);
 

@@ -1,7 +1,7 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-#include <vector>
+#include <cstddef>
 
 struct Path {
 public:
