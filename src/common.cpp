@@ -1,6 +1,6 @@
 #include <common.h>
 
-size_t overlap(const std::string &s1, const std::string &s2) {
+size_t overlap(std::string s1, std::string s2) {
     size_t s1_len = s1.length();
     size_t s2_len = s2.length();
     size_t overlap = 0;
@@ -13,11 +13,11 @@ size_t overlap(const std::string &s1, const std::string &s2) {
     return overlap;
 }
 
-std::string prefix(const std::string &s1, size_t ov) {
+std::string prefix(std::string s1, size_t ov) {
     return s1.substr(0, s1.length() - ov);
 }
 
-std::string StringBuilder(const std::list<std::string> & superstrings) {
+std::string StringBuilder(std::list<std::string> & superstrings) {
     std::string string_result = "";
     std::list<std::string>::const_iterator it = superstrings.begin();
     for (; it != superstrings.end(); it++) {

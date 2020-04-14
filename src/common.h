@@ -6,11 +6,11 @@
 #include <list>
 #include <cstddef>
 
-size_t overlap(const std::string &s1, const std::string &s2);
+size_t overlap(std::string s1, std::string s2);
 
-std::string prefix(const std::string &s1, size_t ov);
+std::string prefix(std::string s1, size_t ov);
 
-std::string StringBuilder(const std::list<std::string> &superstrings);
+std::string StringBuilder(std::list<std::string> & superstrings);
 
 Graph BuildOverlaps(size_t number_of_strings, std::string *strings);
 

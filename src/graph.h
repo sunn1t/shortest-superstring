@@ -32,5 +32,6 @@ private:
     size_t ** adj_matrix;
 };
 
+
 #endif // GRAPH_H
 
