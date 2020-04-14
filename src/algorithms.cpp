@@ -6,7 +6,7 @@ std::string AlgorithmBJLTY(size_t number_of_strings, std::string *strings) {
 
     size_t *assign = assignment(overlaps.GetMatrix(), overlaps.GetSize());
 
-    std::list<std::list<size_t>> cycles;
+    std::list<std::list<size_t> > cycles;
     std::list<std::size_t> cycle;
     bool *mark = new bool[number_of_strings];
 
@@ -33,7 +33,7 @@ std::string AlgorithmBJLTY(size_t number_of_strings, std::string *strings) {
     delete [] assign;
 
     std::list<std::string> superstrings;
-    std::list<std::list<size_t>>::iterator it;
+    std::list<std::list<size_t> >::iterator it;
 
     for (it = cycles.begin(); it != cycles.end(); it++) {
         std::string str = "";
