@@ -1,17 +1,16 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
-project(ShortestSuperstring)
+project(shortest-superstring)
 
-set (CMAKE_CXX_STANDARD 17)
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -std=c++17 -march=native")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR})
 
-include_directories(./)
+add_subdirectory(src)
 
-add_library(lib STATIC algorithms.h algorithms.cpp graph.h graph.cpp common.h common.cpp tcp.h tcp.cpp)
+include(cmake/googletest.cmake)
+fetch_googletest(
+    ${PROJECT_SOURCE_DIR}/cmake
+    ${PROJECT_BINARY_DIR}/googletest
+    )
 
-add_executable(exec tests.cpp main.cpp)
-
-target_link_libraries(exec lib gtest gtest_main pthread)
-
-add_subdirectory(lib/googletest)
-
+enable_testing()
+add_subdirectory(test)
