@@ -50,7 +50,7 @@ Path Tcp(const Graph G) {
     return final_path;
 }
 
-std::string GetStringFromPath(Graph overlaps, Path path, std::string *strings) {
+std::string GetStringFromPath(const Graph &overlaps, const Path &path, std::string *strings) {
 
     std::list<std::string> str_list;
     for (size_t i = 0; i < path.n - 1; i++) {
