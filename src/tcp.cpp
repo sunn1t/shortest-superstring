@@ -1,16 +1,18 @@
 #include <tcp.h>
+#include <iostream>
 
 void TcpRec(const Graph &G, Path &path, Path &final_path, bool *unused, size_t idx) {
 
     static size_t length = 0;
+    length = idx == 0 ? 0 : length;
 
     if (idx == G.GetSize()) {
         size_t path_length = G.GetLength(path);
 
-        std::cout << "Path: ";
-        for (size_t i = 0; i < path.n; i++) {
-            std::cout << path.v_sequence[i] << " ";
-        }
+//        std::cout << "Path: ";
+//        for (size_t i = 0; i < path.n; i++) {
+//            std::cout << path.v_sequence[i] << " ";
+//        }
 
         if (path_length >= length) {
             length = path_length;
@@ -19,10 +21,10 @@ void TcpRec(const Graph &G, Path &path, Path &final_path, bool *unused, size_t i
                 final_path.v_sequence[i] = path.v_sequence[i];
             }
 
-            std::cout << ": chosen!";
+//            std::cout << ": chosen!";
         }
 
-        std::cout << std::endl;
+//        std::cout << std::endl;
     }
 
     for (size_t i = 0; i < G.GetSize(); i++) {
@@ -55,11 +57,11 @@ Path Tcp(const Graph G) {
     delete [] path.v_sequence;
     delete [] unused;
 
-    std::cout << "Final Path: ";
-    for (size_t i = 0; i < final_path.n; i++) {
-        std::cout << final_path.v_sequence[i] << " ";
-    }
-    std::cout << std::endl;
+//    std::cout << "Final Path: ";
+//    for (size_t i = 0; i < final_path.n; i++) {
+//        std::cout << final_path.v_sequence[i] << " ";
+//    }
+//    std::cout << std::endl;
 
     return final_path;
 }
@@ -75,5 +77,4 @@ std::string GetStringFromPath(Graph overlaps, Path path, std::string *strings) {
 
     return StringBuilder(str_list);
 }
-
 

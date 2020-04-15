@@ -14,6 +14,5 @@ std::string StringBuilder(std::list<std::string> & superstrings);
 
 Graph BuildOverlaps(size_t number_of_strings, std::string *strings);
 
-
 #endif // COMMON_H
 

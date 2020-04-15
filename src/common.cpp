@@ -1,4 +1,5 @@
 #include <common.h>
+#include <iostream>
 
 size_t overlap(std::string s1, std::string s2) {
     size_t s1_len = s1.length();
