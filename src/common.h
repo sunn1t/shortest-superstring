@@ -8,7 +8,7 @@
 
 size_t overlap(std::string s1, std::string s2);
 
-std::string prefix(std::string s1, size_t ov);
+std::string prefix(const std::string &s1, size_t ov);
 
 std::string StringBuilder(std::list<std::string> & superstrings);
 

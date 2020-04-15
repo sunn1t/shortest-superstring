@@ -13,7 +13,7 @@ size_t overlap(std::string s1, std::string s2) {
     return overlap;
 }
 
-std::string prefix(std::string s1, size_t ov) {
+std::string prefix(const std::string &s1, size_t ov) {
     return s1.substr(0, s1.length() - ov);
 }
 
