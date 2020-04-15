@@ -17,7 +17,7 @@ std::string prefix(const std::string &s1, size_t ov) {
     return s1.substr(0, s1.length() - ov);
 }
 
-std::string StringBuilder(std::list<std::string> & superstrings) {
+std::string StringBuilder(const std::list<std::string> & superstrings) {
     std::string string_result = "";
     std::list<std::string>::const_iterator it = superstrings.begin();
     for (; it != superstrings.end(); it++) {
